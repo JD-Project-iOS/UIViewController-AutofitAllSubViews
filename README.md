@@ -1,1 +1,1 @@
- ![gif](https://github.com/donggelaile/UIViewController+AutofitAllSubViews/raw/master/Untitled.gif)
+ ![gif](https://github.com/donggelaile/UIViewController-AutofitAllSubViews/blob/master/Untitled.gif)
