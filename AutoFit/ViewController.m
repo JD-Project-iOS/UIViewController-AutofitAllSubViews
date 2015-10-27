@@ -26,6 +26,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor grayColor];
     /*
         创建ui的代码只需要固定各个view的frame，必须针对iphone5或iphone6写了一套已经适配的frame
      

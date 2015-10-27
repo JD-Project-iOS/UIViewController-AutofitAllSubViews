@@ -1,1 +1,1 @@
-此方法只是对frame进行等比缩放，建议在比较简单页面中使用。不建议大量使用。
+ ![gif](https://github.com/donggelaile/UIViewController+AutofitAllSubViews/raw/master/Untitled.gif)
