@@ -27,10 +27,10 @@ NSString *const CHDIphone6=@"CHDIphone6";
     if (isFirst) {
         if (device == CHDIphone5) {
             Xchange = [UIScreen mainScreen].bounds.size.width /320.0;
-            Ychange = [UIScreen mainScreen].bounds.size.height/568.0;
+            Ychange = ([UIScreen mainScreen].bounds.size.height-20)/(568.0-20);
         }else if (device == CHDIphone6){
             Xchange = [UIScreen mainScreen].bounds.size.width /375.0;
-            Ychange = [UIScreen mainScreen].bounds.size.height/667.0;
+            Ychange = ([UIScreen mainScreen].bounds.size.height-20)/(667.0-20);
         }
         allArr = [NSMutableArray array];
         isFirst = NO;
@@ -41,7 +41,7 @@ NSString *const CHDIphone6=@"CHDIphone6";
     NSLog(@"适配的子view个数%d",(int)superView.subviews.count);
     //根据比例对所有子view进行适配并保存需要的子view
     for (UIView *subView in superView.subviews) {
-        subView.frame = CGRectMake(subView.frame.origin.x *Xchange, subView.frame.origin.y * Ychange, subView.frame.size.width * Xchange, subView.frame.size.height * Ychange);
+        subView.frame = CGRectMake(subView.frame.origin.x *Xchange, (subView.frame.origin.y - 20)*Ychange + 20, subView.frame.size.width * Xchange, subView.frame.size.height * Ychange-20*(Ychange - 1));
         if (subView.subviews.count) {
             [subViewArr addObject:subView];
         }
