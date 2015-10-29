@@ -11,7 +11,7 @@ NSString *const CHDIphone5=@"CHDIphone5";
 NSString *const CHDIphone6=@"CHDIphone6";
 @implementation UIViewController (AutofitAllSubViews)
 
-//另:此方法只是对frame进行等比缩放，建议在比较简单页面中使用。不建议大量使用。
+//另:此方法只是对frame进行等比缩放，建议在比较简单页面中使用。不建议大量使用。  该方法的本质就是根据当前屏幕比例，找到传入view的所有的子view(包括子view的子view)进行frame的改变。 最终效果类似苹果的放大模式，但是由于是对frame的改变，不会导致发虚。
 - (void)autoFitFrameWithSuper:(UIView *)superView baseOn:(NSString *)device
 {    
     static float Xchange = 1.0;
