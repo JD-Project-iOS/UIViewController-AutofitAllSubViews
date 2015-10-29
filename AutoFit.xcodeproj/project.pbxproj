@@ -21,8 +21,8 @@
 		012B83531AD9AA14004E90F5 /* AutoFitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 012B83521AD9AA14004E90F5 /* AutoFitTests.m */; };
 		012B835F1AD9B5F2004E90F5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 012B835D1AD9B5F2004E90F5 /* ViewController.m */; };
 		012B83601AD9B5F2004E90F5 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 012B835E1AD9B5F2004E90F5 /* ViewController.xib */; };
-		8FA4A0FB1BDF580300280F3E /* UIViewController+AutofitAllSubViews.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA4A0FA1BDF580300280F3E /* UIViewController+AutofitAllSubViews.m */; settings = {ASSET_TAGS = (); }; };
-		8FA4A0FD1BDF591800280F3E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FA4A0FC1BDF591800280F3E /* Launch Screen.storyboard */; settings = {ASSET_TAGS = (); }; };
+		8FA4A0FB1BDF580300280F3E /* UIViewController+AutofitAllSubViews.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA4A0FA1BDF580300280F3E /* UIViewController+AutofitAllSubViews.m */; };
+		8FA4A0FD1BDF591800280F3E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FA4A0FC1BDF591800280F3E /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -381,6 +381,7 @@
 				GCC_PREFIX_HEADER = "AutoFit/AutoFit-Prefix.pch";
 				INFOPLIST_FILE = "AutoFit/AutoFit-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -394,6 +395,7 @@
 				GCC_PREFIX_HEADER = "AutoFit/AutoFit-Prefix.pch";
 				INFOPLIST_FILE = "AutoFit/AutoFit-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

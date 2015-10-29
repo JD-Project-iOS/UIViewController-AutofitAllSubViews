@@ -35,17 +35,24 @@ NSString *const CHDIphone6=@"CHDIphone6";
         allArr = [NSMutableArray array];
         isFirst = NO;
     }
-    
+    static BOOL isSelfViewSub = YES;
     //用于存储当前父view下的子view还拥有子view的view
     NSMutableArray *subViewArr = [NSMutableArray arrayWithCapacity:0];
     NSLog(@"适配的子view个数%d",(int)superView.subviews.count);
+    
+    //认为第一次适配的是self.view 的子view，考虑20状态条高度. 所以，传入的view必须是self.view
     //根据比例对所有子view进行适配并保存需要的子view
     for (UIView *subView in superView.subviews) {
-        subView.frame = CGRectMake(subView.frame.origin.x *Xchange, (subView.frame.origin.y - 20)*Ychange + 20, subView.frame.size.width * Xchange, subView.frame.size.height * Ychange-20*(Ychange - 1));
+        if (isSelfViewSub) {
+            subView.frame = CGRectMake(subView.frame.origin.x *Xchange, (subView.frame.origin.y - 20)*Ychange + 20, subView.frame.size.width * Xchange, subView.frame.size.height * Ychange);
+        }else{
+            subView.frame = CGRectMake(subView.frame.origin.x *Xchange, (subView.frame.origin.y )*Ychange , subView.frame.size.width * Xchange, subView.frame.size.height * Ychange);
+        }
         if (subView.subviews.count) {
             [subViewArr addObject:subView];
         }
     }
+    isSelfViewSub = NO;
     //添加到大叔组
     [allArr addObject:subViewArr];
     //查找该父view是否已经适配子view，适配后删除。否则将递归无线循环
@@ -67,6 +74,7 @@ NSString *const CHDIphone6=@"CHDIphone6";
         }
     }
     //清空
+    isSelfViewSub = YES;
     isFirst = YES;
     [allArr removeAllObjects];
 }
